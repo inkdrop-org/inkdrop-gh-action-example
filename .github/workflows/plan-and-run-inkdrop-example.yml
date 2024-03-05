@@ -20,7 +20,7 @@ jobs:
             
       - name: Terraform Init and Plan
         id: plan
-        working-directory: ./test-project
+        working-directory: .
         run: |
           terraform init
           plan_output=$(terraform plan -out plan.out -no-color)
@@ -34,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: plan
-          path: ./test-project/plan.out
+          path: ./plan.out
 
       - name: Comment PR with Terraform Plan
         uses: actions/github-script@v6
@@ -43,11 +43,11 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             const fs = require('fs');
-            const planOutput = fs.readFileSync('${{ github.workspace }}/test-project/plan.txt', 'utf8');
+            const planOutput = fs.readFileSync('${{ github.workspace }}/plan.txt', 'utf8');
             github.rest.issues.createComment({
               ...context.repo,
               issue_number: context.issue.number,
-              body: "### Terraform Plan Output\n" + "```\n" + planOutput + "\n```"
+              body: "### Terraform Plan Output\n<details><summary>See output</summary>\n\n"+ "```\n" + planOutput + "\n```\n</details>",
             });
 
   ############################ RUN INKDROP ##################################
@@ -62,4 +62,3 @@ jobs:
       plan_artifact: plan
       terraform_relative_dir: .
       plan_file_name: plan.out
-      inkdrop_version: v1.1.13 # Defaults to latest

@@ -47,7 +47,7 @@ jobs:
             github.rest.issues.createComment({
               ...context.repo,
               issue_number: context.issue.number,
-              body: "### Terraform Plan Output\n<details><summary>See output</summary>\n"+ "```\n" + planOutput + "\n```\n</details>",
+              body: "### Terraform Plan Output\n<details><summary>See output</summary>\n\n"+ "```\n" + planOutput + "\n```\n</details>",
             });
 
   ############################ RUN INKDROP ##################################

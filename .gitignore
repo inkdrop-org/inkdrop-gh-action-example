@@ -1,3 +1,5 @@
 .terraform*
-plan.out
+plan*.out
 inkdrop-diagram*.svg
+terraform.*
+hello_lambda.zip

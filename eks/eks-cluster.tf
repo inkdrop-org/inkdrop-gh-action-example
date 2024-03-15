@@ -49,9 +49,6 @@ resource "aws_security_group" "demo-cluster" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags = {
-    Name = "terraform-eks-demo"
-  }
 }
 
 resource "aws_security_group_rule" "demo-cluster-ingress-workstation-https" {
@@ -77,4 +74,8 @@ resource "aws_eks_cluster" "demo" {
     aws_iam_role_policy_attachment.demo-cluster-AmazonEKSClusterPolicy,
     aws_iam_role_policy_attachment.demo-cluster-AmazonEKSVPCResourceController,
   ]
+
+  tags = {
+    BudgetExempt = true
+  }
 }

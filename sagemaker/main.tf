@@ -109,7 +109,7 @@ resource "aws_sagemaker_model" "foo" {
   }
 
   tags = {
-    foo = "bar"
+    BudgetExempt = true
   }
 }
 
@@ -125,7 +125,7 @@ resource "aws_sagemaker_endpoint_configuration" "foo" {
   }
 
   tags = {
-    foo = "bar"
+    BudgetExempt = true
   }
 }
 
@@ -134,6 +134,6 @@ resource "aws_sagemaker_endpoint" "foo" {
   endpoint_config_name = aws_sagemaker_endpoint_configuration.foo.name
 
   tags = {
-    foo = "bar"
+    BudgetExempt = true
   }
 }

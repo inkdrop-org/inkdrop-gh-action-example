@@ -1,7 +1,3 @@
-# EKS Getting Started Guide Configuration
-
-This is the full configuration from https://www.terraform.io/docs/providers/aws/guides/eks-getting-started.html
-
-See that guide for additional information.
-
-NOTE: This full configuration utilizes the [Terraform http provider](https://www.terraform.io/docs/providers/http/index.html) to call out to icanhazip.com to determine your local workstation external IP for easily configuring EC2 Security Group access to the Kubernetes servers. Feel free to replace this as necessary.
+## Inkdrop Diagram
+![Inkdrop Diagram](https://github.com/inkdrop-org/inkdrop-gh-action-example/blob/inkdrop-ci-data/inkdrop-data/PR3/module.eks_24-04-05_14-02-35.svg?raw=true)
+*[Inkdrop Data JSON](https://github.com/inkdrop-org/inkdrop-gh-action-example/blob/inkdrop-ci-data/inkdrop-data/PR3/inkdrop-ci-data-eks_24-04-05_14-02-34.json). Install the [Inkdrop Chrome Extension](https://chromewebstore.google.com/detail/visualize-your-terraform/pddpcicnnongifmhilbamagnhiiibkki) to hide this caption and enable interactive mode.*

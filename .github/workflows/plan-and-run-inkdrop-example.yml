@@ -62,3 +62,5 @@ jobs:
       plan_artifact: plan
       terraform_relative_dir: .
       plan_file_name: plan.out
+      diagram_readme: true
+      modules_diagram_readme: true

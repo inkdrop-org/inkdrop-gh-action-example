@@ -1,1 +1,0 @@
-# inkdrop-gh-action-example
